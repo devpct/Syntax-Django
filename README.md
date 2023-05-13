@@ -10,14 +10,15 @@ pip install django
 2- ایجاد پروژه جنگویی
 
 django-admin startproject projectname
-
+<hr>
 3- ورود به داخل پوشه پروژه
 
 cd projectname
-
+<hr>
 4- ایجاد یک اپ
 
 python manage.py startapp appname
+<hr>
 
 5- settings.py در فایل INSTALL_APPS اضافه کردن اپ به لیست 
 INSTALL_APPS = [
