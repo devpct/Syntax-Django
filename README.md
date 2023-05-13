@@ -1,5 +1,3 @@
-# Quickly create a Django project with API , ORM , and commands
-
 <h3>- ایجاد پروژه جنگویی</h3>
 
 1- نصب پکیج جنگو
