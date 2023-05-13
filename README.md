@@ -1,5 +1,5 @@
 # Syntax-Django
-Quickly create a Django project with API , ORM , and commands
+# Quickly create a Django project with API , ORM , and commands
 
 
 1- نصب پکیج جنگو
