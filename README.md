@@ -228,7 +228,7 @@ DATABASES = {
 </pre>
 <hr>
 
-21- js در fetch نحوه درست
+21- JS در fetch نحوه درست
   
   <pre>
   //READ
