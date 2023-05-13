@@ -1,76 +1,115 @@
 # Quickly create a Django project with API , ORM , and commands
 
-
+<h3>- ایجاد پروژه جنگویی</h3>
 
 1- نصب پکیج جنگو
-
+<pre>
 pip install django
+</pre>
 <hr>
 
 2- ایجاد پروژه جنگویی
-
+<pre>
 django-admin startproject projectname
+</pre>
 <hr>
 
 3- ورود به داخل پوشه پروژه
-
+<pre>
 cd projectname
+</pre>
 <hr>
 
 4- ایجاد یک اپ
-
+<pre>
 python manage.py startapp appname
+</pre>
 <hr>
 
 5- settings.py در فایل INSTALL_APPS اضافه کردن اپ به لیست 
-
+<pre>
 INSTALL_APPS = [
     #...
     'appname',
 ]
+</pre>
+
 <hr>
 
 6- projectname در پوشه ی urls.py اضافه کردن اپ به فایل 
+
+<pre>
 from django.urls import path,include
+
 urlpatterns = [
     #...
-    path('', include('newapp.urls')),
+    path('', include('newapp.urls')),  
 ]
+</pre>
+<hr>
 
 7- دستور اجرا کردن پروژه
+<pre>
 python manage.py runserver
+</pre>
+<hr>
 
-8- و زدن این کد ها در فایلappname در پوشه ی urls.py ایجاد فایل   
+8- و زدن این کد ها در فایلappname در پوشه ی urls.py ایجاد فایل
+<pre>
 from django.urls import path
 from . import views
+
 urlpatterns = [
     # : مثال api ایجاد
-
     path('users', views.users,name='users'),
     path('add', views.add , name='add'),
     path('delete', views.delete , name='delete'),
     path('update', views.update , name='update')
 ]
+</pre>
+<hr>
 
-9- انجام می شود models.py اضافه کردن جداول به دیتابیس در فایل 
+<h3>- ORM</h3>
+
+9- انجام می شود models.py اضافه کردن جداول به دیتابیس در فایل
+<pre>
 class Users(models.Model):
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
+</pre>
+<hr>
 
-10- این دستور را اجرا کنید models.py برای اعمال تغییرات  
+10- این دستور را اجرا کنید models.py برای اعمال تغییرات
+<pre>
 python manage.py makemigrations
+</pre>
+<hr>
 
-11- در دیتابیس هم این تغییرات انجام شود این دستور را اجرا کنید models.py برای اینکه تغییرات  
+11- در دیتابیس هم این تغییرات انجام شود این دستور را اجرا کنید models.py برای اینکه تغییرات
+<pre>
 python manage.py migrate
+</pre>
+<hr>
+
+<h3>- API</h3>
 
 12- api نصب پکیج 
+<pre>
 pip install djangorestframework
+</pre>
+<hr>
 
-13- cors نصب پکیج  
+<h3>- CORS</h3>
+
+13- cors نصب پکیج 
+<pre>
 pip install django-cors-headers
+</pre>
+<hr>
 
-14- بنویسید settings.py برای استفاده از این پکیج ها کد های زیر را در فایل    
+14- بنویسید settings.py برای استفاده از این پکیج ها کد های زیر را در فایل
+<pre>
 INSTALLED_APPS = [
     #...
     'rest_framework',
@@ -84,19 +123,28 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
+</pre>
+<hr>
 
 15- views.py در فایل api و cors و json ایمپورت کردن کتابخانه های 
+<pre>
 from django.http import JsonResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
 import json
+</pre>
+<hr>
 
 16- views.py نوشتیم باید آن را ایمپورت کنیم درmodels.py هرتابعی که در 
+<pre>
 from .models import Users
+</pre>
+<hr>
 
 17- views.py نوشتن کوئری ها و تابع ها در فایل  
+<pre>
 @api_view(['GET'])
 def users(request):
     user = Users.objects.get(id=1)
@@ -147,14 +195,26 @@ def update(request):
     user.save()
 
     return JsonResponse({'status': 'ok'})
+</pre>
+<hr>
 
-18- mysql دانلود  
-https://dl.yasdl.com/2022/Software/MySQL.8.0.31.Community_YasDL.com.rar?hj
+<h3>- MY SQL</h3>
+
+18- mysql دانلود 
+<pre>
+<a href="https://dl.yasdl.com/2022/Software/MySQL.8.0.31.Community_YasDL.com.rar?hj">https://dl.yasdl.com/2022/Software/MySQL.8.0.31.Community_YasDL.com.rar?hj</a>
+</pre>
+<hr>
 
 19- mysql نصب پیکج 
+<pre>
 pip install mysqlclient
+</pre>
+<hr>
 
-20- ویرایش دهید و اطلاعات دیتابیسی که در مای اسکیوال ایجاد کرده اید را بنویسید settings.py کد زیر را در فایل  
+
+20- ویرایش دهید و اطلاعات دیتابیسی که در مای اسکیوال ایجاد کرده اید را بنویسید settings.py کد زیر را در فایل
+<pre>
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -165,9 +225,12 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+</pre>
+<hr>
 
 21- js در fetch نحوه درست
   
+  <pre>
   //READ
   fetch('http://127.0.0.1:8000/users', {
     method: 'GET',
@@ -246,3 +309,4 @@ let formData = {
   .catch(error => {
     console.log(error);
   });
+</pre>
