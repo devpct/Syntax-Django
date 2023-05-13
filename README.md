@@ -2,7 +2,7 @@
 
 
 
-</b>1- نصب پکیج جنگو<b>
+1- نصب پکیج جنگو
 
 pip install django
 <hr>
@@ -22,12 +22,13 @@ cd projectname
 python manage.py startapp appname
 <hr>
 
-
 5- settings.py در فایل INSTALL_APPS اضافه کردن اپ به لیست 
+
 INSTALL_APPS = [
     #...
     'appname',
 ]
+<hr>
 
 6- projectname در پوشه ی urls.py اضافه کردن اپ به فایل 
 from django.urls import path,include
