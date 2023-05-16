@@ -8,19 +8,19 @@ pip install django
 
 4- ایجاد پروژه جنگویی
 <pre>
-django-admin startproject database
+django-admin startproject backend
 </pre>
 <hr>
 
 3- ورود به داخل پوشه دیتابیس
 <pre>
-cd database
+cd backend
 </pre>
 <hr>
 
 5- ایجاد یک اپ
 <pre>
-python manage.py startapp appname
+python manage.py startapp app
 </pre>
 <hr>
 
@@ -28,13 +28,13 @@ python manage.py startapp appname
 <pre>
 INSTALL_APPS = [
     #...
-    'appname',
+    'app',
 ]
 </pre>
 
 <hr>
 
-7- projectname در پوشه ی urls.py اضافه کردن اپ به فایل 
+7- backend در پوشه ی urls.py اضافه کردن اپ به فایل 
 
 <pre>
 from django.urls import path,include
@@ -52,7 +52,7 @@ python manage.py runserver
 </pre>
 <hr>
 
-9- و زدن این کد ها در فایلappname در پوشه ی urls.py ایجاد فایل
+9- و زدن این کد ها در فایلapp در پوشه ی urls.py ایجاد فایل
 <pre>
 from django.urls import path
 from . import views
