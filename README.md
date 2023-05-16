@@ -41,7 +41,7 @@ from django.urls import path,include
 
 urlpatterns = [
     #...
-    path('', include('newapp.urls')),  
+    path('', include('app.urls')),  
 ]
 </pre>
 <hr>
