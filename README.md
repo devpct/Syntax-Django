@@ -6,22 +6,15 @@ pip install django
 </pre>
 <hr>
 
-2- ایجاد پوشه دیتابیس
+4- ایجاد پروژه جنگویی
 <pre>
-mkdir database
+django-admin startproject database
 </pre>
 <hr>
-
 
 3- ورود به داخل پوشه دیتابیس
 <pre>
 cd database
-</pre>
-<hr>
-
-4- ایجاد پروژه جنگویی
-<pre>
-django-admin startproject projectname
 </pre>
 <hr>
 
