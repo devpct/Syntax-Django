@@ -6,25 +6,32 @@ pip install django
 </pre>
 <hr>
 
-2- ایجاد پروژه جنگویی
+2- ایجاد پوشه دیتابیس
+<pre>
+mkdir database
+</pre>
+<hr>
+
+
+3- ورود به داخل پوشه دیتابیس
+<pre>
+cd database
+</pre>
+<hr>
+
+4- ایجاد پروژه جنگویی
 <pre>
 django-admin startproject projectname
 </pre>
 <hr>
 
-3- ورود به داخل پوشه پروژه
-<pre>
-cd projectname
-</pre>
-<hr>
-
-4- ایجاد یک اپ
+5- ایجاد یک اپ
 <pre>
 python manage.py startapp appname
 </pre>
 <hr>
 
-5- settings.py در فایل INSTALL_APPS اضافه کردن اپ به لیست 
+6- settings.py در فایل INSTALL_APPS اضافه کردن اپ به لیست 
 <pre>
 INSTALL_APPS = [
     #...
@@ -34,7 +41,7 @@ INSTALL_APPS = [
 
 <hr>
 
-6- projectname در پوشه ی urls.py اضافه کردن اپ به فایل 
+7- projectname در پوشه ی urls.py اضافه کردن اپ به فایل 
 
 <pre>
 from django.urls import path,include
@@ -46,13 +53,13 @@ urlpatterns = [
 </pre>
 <hr>
 
-7- دستور اجرا کردن پروژه
+8- دستور اجرا کردن پروژه
 <pre>
 python manage.py runserver
 </pre>
 <hr>
 
-8- و زدن این کد ها در فایلappname در پوشه ی urls.py ایجاد فایل
+9- و زدن این کد ها در فایلappname در پوشه ی urls.py ایجاد فایل
 <pre>
 from django.urls import path
 from . import views
@@ -69,7 +76,7 @@ urlpatterns = [
 
 <h3>- ORM</h3>
 
-9- انجام می شود models.py اضافه کردن جداول به دیتابیس در فایل
+10- انجام می شود models.py اضافه کردن جداول به دیتابیس در فایل
 <pre>
 class Users(models.Model):
     firstname = models.CharField(max_length=100)
@@ -78,13 +85,13 @@ class Users(models.Model):
 </pre>
 <hr>
 
-10- این دستور را اجرا کنید models.py برای اعمال تغییرات
+11- این دستور را اجرا کنید models.py برای اعمال تغییرات
 <pre>
 python manage.py makemigrations
 </pre>
 <hr>
 
-11- در دیتابیس هم این تغییرات انجام شود این دستور را اجرا کنید models.py برای اینکه تغییرات
+12- در دیتابیس هم این تغییرات انجام شود این دستور را اجرا کنید models.py برای اینکه تغییرات
 <pre>
 python manage.py migrate
 </pre>
@@ -92,7 +99,7 @@ python manage.py migrate
 
 <h3>- API</h3>
 
-12- api نصب پکیج 
+13- api نصب پکیج 
 <pre>
 pip install djangorestframework
 </pre>
@@ -100,13 +107,13 @@ pip install djangorestframework
 
 <h3>- CORS</h3>
 
-13- cors نصب پکیج 
+14- cors نصب پکیج 
 <pre>
 pip install django-cors-headers
 </pre>
 <hr>
 
-14- بنویسید settings.py برای استفاده از این پکیج ها کد های زیر را در فایل
+15- بنویسید settings.py برای استفاده از این پکیج ها کد های زیر را در فایل
 <pre>
 INSTALLED_APPS = [
     #...
@@ -124,7 +131,7 @@ CORS_ALLOW_CREDENTIALS = True
 </pre>
 <hr>
 
-15- views.py در فایل api و cors و json ایمپورت کردن کتابخانه های 
+16- views.py در فایل api و cors و json ایمپورت کردن کتابخانه های 
 <pre>
 from django.http import JsonResponse
 from rest_framework.views import APIView
@@ -135,13 +142,13 @@ import json
 </pre>
 <hr>
 
-16- views.py نوشتیم باید آن را ایمپورت کنیم درmodels.py هرتابعی که در 
+17- views.py نوشتیم باید آن را ایمپورت کنیم درmodels.py هرتابعی که در 
 <pre>
 from .models import Users
 </pre>
 <hr>
 
-17- views.py نوشتن کوئری ها و تابع ها در فایل  
+18- views.py نوشتن کوئری ها و تابع ها در فایل  
 <pre>
 @api_view(['GET'])
 def users(request):
@@ -198,20 +205,20 @@ def update(request):
 
 <h3>- MY SQL</h3>
 
-18- mysql دانلود 
+19- mysql دانلود 
 <pre>
 <a href="https://dl.yasdl.com/2022/Software/MySQL.8.0.31.Community_YasDL.com.rar?hj">https://dl.yasdl.com/2022/Software/MySQL.8.0.31.Community_YasDL.com.rar?hj</a>
 </pre>
 <hr>
 
-19- mysql نصب پیکج 
+20- mysql نصب پیکج 
 <pre>
 pip install mysqlclient
 </pre>
 <hr>
 
 
-20- ویرایش دهید و اطلاعات دیتابیسی که در مای اسکیوال ایجاد کرده اید را بنویسید settings.py کد زیر را در فایل
+21- ویرایش دهید و اطلاعات دیتابیسی که در مای اسکیوال ایجاد کرده اید را بنویسید settings.py کد زیر را در فایل
 <pre>
 DATABASES = {
     'default': {
@@ -226,7 +233,7 @@ DATABASES = {
 </pre>
 <hr>
 
-21- JS در fetch نحوه درست
+22- JS در fetch نحوه درست
   
   <pre>
   //READ
