@@ -97,29 +97,6 @@ DATABASES = {
 </pre>
 <hr>
 
-<h3>- ORM</h3>
-
-9- انجام می شود models.py اضافه کردن جداول به دیتابیس در فایل
-<pre>
-class Users(models.Model):
-    firstname = models.CharField(max_length=100)
-    lastname = models.CharField(max_length=100)
-    country = models.CharField(max_length=100)
-</pre>
-<hr>
-
-10- این دستور را اجرا کنید models.py برای اعمال تغییرات
-<pre>
-python manage.py makemigrations
-</pre>
-<hr>
-
-11- در دیتابیس هم این تغییرات انجام شود این دستور را اجرا کنید models.py برای اینکه تغییرات
-<pre>
-python manage.py migrate
-</pre>
-<hr>
-
 <h3>- API</h3>
 
 12- api نصب پکیج 
@@ -153,6 +130,30 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 </pre>
 <hr>
+
+<h3>- ORM</h3>
+
+9- انجام می شود models.py اضافه کردن جداول به دیتابیس در فایل
+<pre>
+class Users(models.Model):
+    firstname = models.CharField(max_length=100)
+    lastname = models.CharField(max_length=100)
+    country = models.CharField(max_length=100)
+</pre>
+<hr>
+
+10- این دستور را اجرا کنید models.py برای اعمال تغییرات
+<pre>
+python manage.py makemigrations
+</pre>
+<hr>
+
+11- در دیتابیس هم این تغییرات انجام شود این دستور را اجرا کنید models.py برای اینکه تغییرات
+<pre>
+python manage.py migrate
+</pre>
+<hr>
+
 
 15- views.py در فایل api و cors و json ایمپورت کردن کتابخانه های 
 <pre>
