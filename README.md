@@ -34,33 +34,6 @@ INSTALL_APPS = [
 
 <hr>
 
-8- و زدن این کد ها در فایلapp در پوشه ی urls.py ایجاد فایل
-<pre>
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    # : مثال api ایجاد
-    path('data/users', views.dataUsers,name='users'),
-    path('add', views.add , name='add'),
-    path('delete', views.delete , name='delete'),
-    path('update', views.update , name='update')
-]
-</pre>
-<hr>
-
-6- backend در پوشه ی urls.py اضافه کردن اپ به فایل 
-
-<pre>
-from django.urls import path,include
-
-urlpatterns = [
-    #...
-    path('', include('app.urls')),
-]
-</pre>
-<hr>
-
 7- دستور اجرا کردن پروژه
 <pre>
 python manage.py runserver
@@ -227,6 +200,34 @@ def update(request):
     user.save()
 
     return JsonResponse({'status': 'ok'})
+</pre>
+<hr>
+
+
+8- و زدن این کد ها در فایلapp در پوشه ی urls.py ایجاد فایل
+<pre>
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    # : مثال api ایجاد
+    path('data/users', views.dataUsers,name='users'),
+    path('add', views.add , name='add'),
+    path('delete', views.delete , name='delete'),
+    path('update', views.update , name='update')
+]
+</pre>
+<hr>
+
+6- backend در پوشه ی urls.py اضافه کردن اپ به فایل 
+
+<pre>
+from django.urls import path,include
+
+urlpatterns = [
+    #...
+    path('', include('app.urls')),
+]
 </pre>
 <hr>
 
