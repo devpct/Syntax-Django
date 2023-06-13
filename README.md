@@ -31,10 +31,9 @@ INSTALL_APPS = [
     'app',
 ]
 </pre>
-
 <hr>
 
-7- دستور اجرا کردن پروژه
+6- دستور اجرا کردن پروژه
 <pre>
 python manage.py runserver
 </pre>
@@ -42,20 +41,20 @@ python manage.py runserver
 
 <h3>- MY SQL</h3>
 
-18- mysql دانلود 
+7- mysql دانلود 
 <pre>
 <a href="https://dl.yasdl.com/2022/Software/MySQL.8.0.31.Community_YasDL.com.rar?hj">https://dl.yasdl.com/2022/Software/MySQL.8.0.31.Community_YasDL.com.rar?hj</a>
 </pre>
 <hr>
 
-19- mysql نصب پیکج 
+8- mysql نصب پیکج 
 <pre>
 pip install mysqlclient
 </pre>
 <hr>
 
 
-20- ویرایش دهید و اطلاعات دیتابیسی که در مای اسکیوال ایجاد کرده اید را بنویسید settings.py کد زیر را در فایل
+9- ویرایش دهید و اطلاعات دیتابیسی که در مای اسکیوال ایجاد کرده اید را بنویسید settings.py کد زیر را در فایل
 <pre>
 DATABASES = {
     'default': {
@@ -72,7 +71,7 @@ DATABASES = {
 
 <h3>- API</h3>
 
-12- api نصب پکیج 
+10- api نصب پکیج 
 <pre>
 pip install djangorestframework
 </pre>
@@ -80,13 +79,13 @@ pip install djangorestframework
 
 <h3>- CORS</h3>
 
-13- cors نصب پکیج 
+11- cors نصب پکیج 
 <pre>
 pip install django-cors-headers
 </pre>
 <hr>
 
-14- بنویسید settings.py برای استفاده از این پکیج ها کد های زیر را در فایل
+12- برای استفاده از این پکیج ها کد های زیر را در فایل settings.py بنویسید
 <pre>
 INSTALLED_APPS = [
     #...
@@ -106,7 +105,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 <h3>- ORM</h3>
 
-9- انجام می شود models.py اضافه کردن جداول به دیتابیس در فایل
+13- اضافه کردن جداول به دیتابیس در فایل models.py انجام می شود
 <pre>
 class Users(models.Model):
     firstname = models.CharField(max_length=100)
@@ -115,20 +114,20 @@ class Users(models.Model):
 </pre>
 <hr>
 
-10- این دستور را اجرا کنید models.py برای اعمال تغییرات
+14- برای اعمال تغییرات models.py این دستور را اجرا کنید
 <pre>
 python manage.py makemigrations
 </pre>
 <hr>
 
-11- در دیتابیس هم این تغییرات انجام شود این دستور را اجرا کنید models.py برای اینکه تغییرات
+15- برای اینکه تغییرات models.py در دیتابیس هم این تغییرات انجام شود این دستور را اجرا کنید
 <pre>
 python manage.py migrate
 </pre>
 <hr>
 
 
-15- views.py در فایل api و cors و json ایمپورت کردن کتابخانه های 
+16- views.py در فایل api و cors و json ایمپورت کردن کتابخانه های 
 <pre>
 from django.http import JsonResponse
 from rest_framework.views import APIView
@@ -139,13 +138,13 @@ import json
 </pre>
 <hr>
 
-16- views.py نوشتیم باید آن را ایمپورت کنیم درmodels.py هرتابعی که در 
+17- views.py نوشتیم باید آن را ایمپورت کنیم در models.py هرتابعی که در 
 <pre>
 from .models import Users
 </pre>
 <hr>
 
-17- views.py نوشتن کوئری ها و تابع ها در فایل  
+18- views.py نوشتن کوئری ها و تابع ها در فایل  
 <pre>
 @api_view(['GET'])
 def dataUsers(request):
@@ -204,7 +203,7 @@ def update(request):
 <hr>
 
 
-8- و زدن این کد ها در فایلapp در پوشه ی urls.py ایجاد فایل
+19- در پوشه ی app ایجاد فایل urls.py و زدن این کد ها در فایل
 <pre>
 from django.urls import path
 from . import views
@@ -219,7 +218,7 @@ urlpatterns = [
 </pre>
 <hr>
 
-6- backend در پوشه ی urls.py اضافه کردن اپ به فایل 
+20- backend در پوشه ی urls.py اضافه کردن اپ به فایل 
 
 <pre>
 from django.urls import path,include
