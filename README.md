@@ -41,7 +41,7 @@ from django.urls import path,include
 
 urlpatterns = [
     #...
-    path('', include('app.urls')),  
+    path('', include('app.urls')),
 ]
 </pre>
 <hr>
@@ -59,7 +59,7 @@ from . import views
 
 urlpatterns = [
     # : مثال api ایجاد
-    path('users', views.users,name='users'),
+    path('data/users', views.dataUsers,name='users'),
     path('add', views.add , name='add'),
     path('delete', views.delete , name='delete'),
     path('update', views.update , name='update')
@@ -144,15 +144,18 @@ from .models import Users
 17- views.py نوشتن کوئری ها و تابع ها در فایل  
 <pre>
 @api_view(['GET'])
-def users(request):
-    user = Users.objects.get(id=1)
+def dataUsers(request):
+    usersList = Users.objects.all()
 
-    data = {
-        'id': user.id,
-        'firstname': user.firstname,
-        'lastname': user.lastname,
-        'country': user.country
-    }
+    data = []
+    for user in usersList:
+        userData = {
+            'id': user.id,
+            'firstname': user.firstname,
+            'lastname': user.lastname,
+            'country': user.country
+        }
+        data.append(userData)
 
     return JsonResponse({'data': data})
 
@@ -236,9 +239,7 @@ DATABASES = {
       'Content-Type': 'application/json'
     },
   })
-  .then(response => {
-    return response.json()
-  })
+  .then(response => response.json())
   .then(response => {
     let users = [response.data]
     users.forEach(user =>{
