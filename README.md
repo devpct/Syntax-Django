@@ -67,6 +67,36 @@ python manage.py runserver
 </pre>
 <hr>
 
+<h3>- MY SQL</h3>
+
+18- mysql دانلود 
+<pre>
+<a href="https://dl.yasdl.com/2022/Software/MySQL.8.0.31.Community_YasDL.com.rar?hj">https://dl.yasdl.com/2022/Software/MySQL.8.0.31.Community_YasDL.com.rar?hj</a>
+</pre>
+<hr>
+
+19- mysql نصب پیکج 
+<pre>
+pip install mysqlclient
+</pre>
+<hr>
+
+
+20- ویرایش دهید و اطلاعات دیتابیسی که در مای اسکیوال ایجاد کرده اید را بنویسید settings.py کد زیر را در فایل
+<pre>
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'projectname',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+</pre>
+<hr>
+
 <h3>- ORM</h3>
 
 9- انجام می شود models.py اضافه کردن جداول به دیتابیس در فایل
@@ -196,36 +226,6 @@ def update(request):
     user.save()
 
     return JsonResponse({'status': 'ok'})
-</pre>
-<hr>
-
-<h3>- MY SQL</h3>
-
-18- mysql دانلود 
-<pre>
-<a href="https://dl.yasdl.com/2022/Software/MySQL.8.0.31.Community_YasDL.com.rar?hj">https://dl.yasdl.com/2022/Software/MySQL.8.0.31.Community_YasDL.com.rar?hj</a>
-</pre>
-<hr>
-
-19- mysql نصب پیکج 
-<pre>
-pip install mysqlclient
-</pre>
-<hr>
-
-
-20- ویرایش دهید و اطلاعات دیتابیسی که در مای اسکیوال ایجاد کرده اید را بنویسید settings.py کد زیر را در فایل
-<pre>
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'projectname',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
 </pre>
 <hr>
 
