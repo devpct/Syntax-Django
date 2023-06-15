@@ -311,3 +311,9 @@ let formData = {
     console.log(error);
   });
 </pre>
+<hr>
+
+22- دستور اعمال نشدن تغییرات فایل models.py 
+<pre>
+python manage.py migrate app --fake
+</pre>
