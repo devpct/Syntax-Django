@@ -111,6 +111,7 @@ class Users(models.Model):
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
+    password = models.IntegerField(max_length=100 , default='default_password')
 </pre>
 <hr>
 
